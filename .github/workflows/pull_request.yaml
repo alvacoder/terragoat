@@ -2,15 +2,8 @@ name: build
 on:
   [pull_request, push]
 jobs:
-  checkov-job:
-    runs-on: ubuntu-latest
-    name: checkov-action
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-
-      - name: Run Checkov action
-        id: checkov
-        uses: bridgecrewio/checkov-action@master
-        with:
-          directory: terraform/
+  iac-scan:
+    name: "Trigger IaC Scan" # modify to suit project name
+    uses: Xttreme/cross-github-actions/.github/workflows/iac-scan.yaml@iac
+    with:
+      runs-on: ubuntu-latest
