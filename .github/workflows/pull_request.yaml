@@ -6,4 +6,4 @@ jobs:
     name: "Trigger IaC Scan" # modify to suit project name
     uses: Xttreme/cross-github-actions/.github/workflows/iac-scan.yaml@iac-xttreme
     with:
-      runs-on: ubuntu-latest
+      runs-on: ubuntu-latest #trigger new run
